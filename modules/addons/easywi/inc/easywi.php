@@ -1421,14 +1421,15 @@ class EasyWi {
 
         $rootIDs = ($vars["configoption7"] == "on") ? preg_split('/,/', $vars["configoption8"], -1, PREG_SPLIT_NO_EMPTY) : array();
 
+		//TODO add available game multiple choice
         $options = array(
             "action" => $vars["action"],
             "type" => $vars["configoption1"],
-            "slots" => (isset($configOptions["slots"]) and $configOptions["slots"] != "") ? $configOptions["slots"] : $vars["configoption2"],
-            "cpu" => (isset($configOptions["cpu"]) and $configOptions["cpu"] != "") ? $configOptions["cpu"]: $vars["configoption3"],
-            "ram" => (isset($configOptions["ram"]) and $configOptions["ram"] != "") ? $configOptions["ram"] : $vars["configoption4"],
-            "hdd" => (isset($configOptions["hdd"]) and $configOptions["hdd"] != "") ? $configOptions["hdd"] : $vars["configoption5"],
-            "traffic" => (isset($configOptions["traffic"]) and $configOptions["traffic"] != "") ? $configOptions["traffic"] : $vars["configoption6"],
+            "slots" => (isset($configOptions["slots"]) and $configOptions["slots"] != "") ? ((substr($vars["configoption2"], 0, 1) == '+') ? ($configOptions["slots"] + intval(substr($vars["configoption2"], 1))) : $configOptions["slots"]) : $vars["configoption2"],
+            "cpu" => (isset($configOptions["cpu"]) and $configOptions["cpu"] != "") ? ((substr($vars["configoption3"], 0, 1) == '+') ? ($configOptions["cpu"] + intval(substr($vars["configoption3"], 1))) : $configOptions["cpu"]): $vars["configoption3"],
+            "ram" => (isset($configOptions["ram"]) and $configOptions["ram"] != "") ? ((substr($vars["configoption4"], 0, 1) == '+') ? ($configOptions["ram"] + intval(substr($vars["configoption4"], 1))) : $configOptions["ram"]) : $vars["configoption4"],
+            "hdd" => (isset($configOptions["hdd"]) and $configOptions["hdd"] != "") ? ((substr($vars["configoption5"], 0, 1) == '+') ? ($configOptions["hdd"] + intval(substr($vars["configoption5"], 1))) : $configOptions["hdd"]) : $vars["configoption5"],
+            "traffic" => (isset($configOptions["traffic"]) and $configOptions["traffic"] != "") ? ((substr($vars["configoption6"], 0, 1) == '+') ? ($configOptions["traffic"] + intval(substr($vars["configoption6"], 1))) : $configOptions["traffic"]) : $vars["configoption6"],
             "bindRoot" => $vars["configoption7"],
             "rootIDs" => $rootIDs,
             "private" => (isset($configOptions["private"]) and $configOptions["private"] != "") ? $configOptions["private"] : $vars["configoption9"],
