@@ -65,11 +65,11 @@ function easywi_ConfigOptions() {
 
     $configarray = array(
         "type" => array("FriendlyName" => "Product type", "Type" => "dropdown", "Options" => "Game server,Voice server,TSDNS,Webspace,MySQL", "Description" => ""),
-        "slots" => array("FriendlyName" => "Slots", "Type" => "text", "Description" => "Can be overwritten by a configurable option with the name 'slots'. (optional)"),
-        "cpu" => array("FriendlyName" => "CPU Cores", "Type" => "text", "Description" => "Sum of allowed cores. Can be overwritten by a configurable option with the name 'cpu'. (optional)."),
-        "ram" => array("FriendlyName" => "Ram", "Type" => "text", "Description" => "Amount in MB. Can be overwritten by a configurable option with the name 'ram'. (optional)."),
-        "hdd" => array("FriendlyName" => "HDD", "Type" => "text", "Description" => "Amount in MB. Can be overwritten by a configurable option with the name 'hdd'. (optional)."),
-        "traffic" => array("FriendlyName" => "Traffic", "Type" => "text", "Description" => "Amount in MB. Can be overwritten by a configurable option with the name 'traffic'. (optional)."),
+        "slots" => array("FriendlyName" => "Slots", "Type" => "text", "Description" => "Can be overwritten by a configurable option with the name 'slots'. (optional - Required if using additive notation '+xx')"),
+        "cpu" => array("FriendlyName" => "CPU Cores", "Type" => "text", "Description" => "Sum of allowed cores. Can be overwritten by a configurable option with the name 'cpu'. (optional - Required if using additive notation '+xx')."),
+        "ram" => array("FriendlyName" => "Ram", "Type" => "text", "Description" => "Amount in MB. Can be overwritten by a configurable option with the name 'ram'. (optional - Required if using additive notation '+xx')."),
+        "hdd" => array("FriendlyName" => "HDD", "Type" => "text", "Description" => "Amount in MB. Can be overwritten by a configurable option with the name 'hdd'. (optional - Required if using additive notation '+xx')."),
+        "traffic" => array("FriendlyName" => "Traffic", "Type" => "text", "Description" => "Amount in MB. Can be overwritten by a configurable option with the name 'traffic'. (optional - Required if using additive notation '+xx')."),
         "bindRoot" => array("FriendlyName" => "Limit to specific root(s)", "Type" => "yesno", "Description" => "Limit product to specified list of root servers."),
     );
 
